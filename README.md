@@ -5,35 +5,48 @@ To write a python program to implement multivariate linear regression and predic
 1.	Hardware – PCs
 2.	Anaconda – Python 3.7 Installation / Moodle-Code Runner
 ## Algorithm:
-### Step1
-<br>
+# Step1
+import pandas as pd.
 
-### Step2
-<br>
+# Step2
+Read the csv file.
 
-### Step3
-<br>
+# Step3
+Get the value of X and y variables
 
-### Step4
-<br>
+# Step4
+Create the linear regression model and fit.
 
-### Step5
-<br>
-
+# Step5
+Predict the CO2 emission of a car where the weight is 2300kg, and the volume is 1300cm cube.
 ## Program:
-```
+```python
+import pandas as pd
 
+url = "https://raw.githubusercontent.com/arunpradeep-sec/Linear-Algebra-Lab/main/carsemission.csv"
 
+df = pd.read_csv(url)
+df.to_csv("carsemission.csv", index=False)
 
-
-
+print("Dataset loaded successfully.")
+import pandas as pd
+from sklearn import linear_model
+df = pd.read_csv("carsemission.csv")
+X = df[['Weight', 'Volume']]
+y = df['CO2']
+regr = linear_model.LinearRegression()
+regr.fit(X, y)
+print('Coefficients:', regr.coef_)
+print('Intercept:', regr.intercept_)
+input_data = pd.DataFrame({'Weight': [3300], 'Volume': [1300]})
+predictedCO2 = regr.predict(input_data)
+print('Predicted CO2 for the corresponding weight and volume:', predictedCO2)
 
 ```
 ## Output:
 
 ### Insert your output
-
-<br>
+<img width="1302" height="622" alt="Exp -10" src="https://github.com/user-attachments/assets/d6fe12a6-78ba-4098-8b3e-d7180b5a51f6" />
 
 ## Result
 Thus the multivariate linear regression is implemented and predicted the output using python program.
